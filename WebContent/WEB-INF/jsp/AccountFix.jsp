@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="css/AccountFix.css" rel="stylesheet" type="text/css">
+    <link href="../css/AccountFix.css" rel="stylesheet" type="text/css">
     
 <title>管理者画面</title>
 </head>
@@ -26,7 +26,7 @@ if (optList.isPresent()) {
 <div class="container mt-5 pt-5">
     <div class="title">
 		
-        <a href="" class="btn btn--white">管理者画面</a><!-- 依頼管理画面へ遷移させる -->
+        <a href="Administrator" class="btn btn--white">管理者画面</a><!-- 依頼管理画面へ遷移させる -->
 		
 			
         <h2 class="text-center border-bottom border-dark">アカウント修正画面</h2>
@@ -67,12 +67,12 @@ if (optList.isPresent()) {
                         	</td>
                         <% } else { %>
                         	<td class="big">             
-                            	<input type="checkbox" checked>                        	
+                            	<input type="checkbox">                        	
                         	</td>
                         <% } %>
                         
                         <td class="center">
-                        	<a href="" class="btn btn--white">削除<!-- 修正画面へ遷移させる --></a>
+                        	<button type="submit" value="this.account_name"class="btn btn--white">削除<!-- 修正画面へ遷移させる --></a>
                         </td> 
                      </tr>                 
                 <%

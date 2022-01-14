@@ -24,13 +24,12 @@ if (optList.isPresent()) {
 <div class="container mt-5 pt-5">
     <div class="title">
 		
-        <a href="" class="btn btn--white">管理者画面</a><!-- 管理者画面へ遷移させる -->
-		
+        <a href="Administrator" class="btn btn--white">管理者画面</a><!-- 管理者画面へ遷移させる -->		
 			
         <h2 class="text-center border-bottom border-dark">アカウント追加画面</h2>
             
-        </div>
-        <form action="/AccountAdd2" method="post">
+     </div>
+        <form action="AccountAdd2" method="post">
         <div>   
             <table class="table table-bordered ">
                 <tbody>
@@ -39,7 +38,7 @@ if (optList.isPresent()) {
                             アカウント名
                         </th>
                         <td>
-                            <input type="text" size="50" name="account_name" value="account_name"><!--アカウント名を入力するテキストボックス-->
+                            <input type="text" size="50" name="account_name" required maxlength="30"><!--アカウント名を入力するテキストボックス-->
                         </td>
                         
                       </tr>                    
@@ -48,7 +47,7 @@ if (optList.isPresent()) {
                             メールアドレス
                         </th>
                         <td>
-                            <input type="text" size="50" name="email" value="email"><!--メールアドレスを入力するテキストボックス-->
+                            <input type="email" size="50" name="email" required maxlength="256"><!--メールアドレスを入力するテキストボックス-->
                         </td>
                         
                       </tr>
@@ -57,22 +56,18 @@ if (optList.isPresent()) {
                             管理者
                         </th>
                         <td>
-                        	<input type="hidden" name="flg" value="0">
-                            <input type="checkbox" class="big2" name="flg" value="1">
-                        </td>
-                        
-                      </tr>
-                        
+                        	
+                            <input type="checkbox" class="big2" name="flg" value=1>
+                        </td>                        
+                      </tr>                       
                 
             </table>
-        </div>                         
-                    <h3 style="text-align: center;">  
-                        <a href="" class="btn btn--blue">新規作成<!-- アカウント追加画面へ遷移させる--></a>
-                    </h3>
-                    
-                </tbody>
+                                 
+                    <h3 style="text-align: center;">                      
+                        <button type="submit" class="btn btn--blue">アカウント追加<!-- アカウント追加画面へ遷移させる--></button>                    
+                    </h3>                            
             
-		</form>
-
-</body>
+			</div>
+		</form>		
+	</body>
 </html>

@@ -32,7 +32,6 @@ if (optList.isPresent()) {
         <h2 class="text-center border-bottom border-dark">管理者画面</h2>
             
         </div>
-        <form action="" method="get">
         <div>   
             <table class="table table-bordered ">
                 <tbody>
@@ -64,17 +63,20 @@ if (optList.isPresent()) {
 				}
 				%> 
             </table>
-        </div>   
-            <form action="AccountFix" method="post" >
-            	<h3 style="text-align: center;">  
-                	<button type="submit" formaction="AccountAdd" value="account_name"class="btn btn--blue">新規作成<!-- アカウント追加画面へ遷移させる--></button>
+        </div> 
+        
+            	<div style="text-align: center; display:inline-flex"> 
+            	
+            	<form action="AccountAdd" method="get" > 
+                	<button type="submit" value="account_name"class="btn btn--blue">新規作成<!-- アカウント追加画面へ遷移させる--></button>
+                </form>
+                
+                <form action="AccountFix" method="get" >                 	
                 	<button type="submit" formaction="AccountFix" class="btn btn--blue">修正<!-- アカウント修正画面へ遷移させる--></button>
-                </h3>
-            </form>
+                </form>
+                
+                </div>
                     
-                </tbody>
-            
-		</form>
 
 </body>
 </html>

@@ -24,9 +24,12 @@ public class AccountAddServlet2 extends HttpServlet {
        
     }
 
-	
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	doPost(request, response);
+		}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=utf-8");
 
 		String name = request.getParameter("account_name");
 		String email = request.getParameter("email");
@@ -38,16 +41,24 @@ public class AccountAddServlet2 extends HttpServlet {
 			Connection con=ds.getConnection();
 			PreparedStatement st =
 					con.prepareStatement(
-							"insert into account(account_name,email,account_flg) Values(?,?,?)"
+							"insert into account(account_name,email,admin_flag) Values(?,?,?)"
 						);
-			ResultSet result = st.executeQuery();
+			
+			if(flg == null) {
+				flg = "0";
+				
+			}
+			 
+			System.out.println(name);
+			System.out.println(email);
+			System.out.println(flg);
 		
 			st.setString(1, name);
 			st.setString(2, email);
 			st.setString(3, flg);
 			st.executeUpdate();
 
-			request.getRequestDispatcher("/WEB-INF/jsp/Administrator.jsp").forward(request,response);
+			request.getRequestDispatcher("Administrator").forward(request,response);
 
 
 

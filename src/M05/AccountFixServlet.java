@@ -54,7 +54,7 @@ try {
 			
 		
 		request.setAttribute("list", list);		
-		request.getRequestDispatcher("AccountAdd").forward(request,response);
+		request.getRequestDispatcher("/WEB-INF/jsp/AccountFix.jsp").forward(request,response);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		doGet(request, response);
 
