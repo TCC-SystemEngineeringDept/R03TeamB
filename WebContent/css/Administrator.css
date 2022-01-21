@@ -19,29 +19,6 @@ p{
     font-size: 1.1rem;
 }
 
-
-.aho{ width: 50%;
-    min-width:150px ;
-    max-width: 250px;
-    padding: 10px; 
-    background: white;
-    border-radius: 8px;
-    border-color: blue;
-    box-shadow: none;
-    
-
-}
-
-    .baka{ width: 100%;
-        min-width:150px ;
-        max-width: 250px;
-        padding: 10px;
-        background-color: white;
-        border-radius: 8px;
-        border-color: red;
-        box-shadow: none;
-
-    }
 body{
         
    /* background-imageSurl("../HTML/unchi.jpg"); 画像 */
@@ -67,8 +44,30 @@ body{
 
 .btn--blue,
 a.btn--blue {
-  color: #fff;
-  background: #3bb3e2;
+    width: 50%;
+    min-width:150px ;
+    max-width: 250px;
+    padding: 10px; 
+    background: white;
+    border-radius: 8px;
+    border-color: blue;
+    box-shadow: none;
+    display:inline-block;
+    margin-right: 50px;
+}
+
+.btn--red,
+a.btn--red {
+    width: 100%;
+    min-width:100px ;
+    max-width: 250px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    border-color: red;
+    box-shadow: none;
+    display:inline-block;
+    margin-right: 50px;    
 }
 
 .btn--white,
@@ -76,5 +75,9 @@ a.btn--white {
   color:#000;
   background:#fff;
   border: 1px solid #000;
+}
 
+.btn2{
+    display: flex;
+    justify-content: center;
 }

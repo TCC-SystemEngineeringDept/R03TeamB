@@ -1,15 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Optional"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="../css/AccountAdd.css" rel="stylesheet" type="text/css">
+    <link href="css/AccountAdd.css" rel="stylesheet" type="text/css">
 <title>管理者画面</title>
 </head>
 <%
@@ -32,7 +33,7 @@ if (optList.isPresent()) {
         <form action="AccountAdd2" method="post">
         <div>   
             <table class="table table-bordered ">
-                <tbody>
+                
                     <tr>
                         <th class="midashi">
                             アカウント名
@@ -49,14 +50,12 @@ if (optList.isPresent()) {
                         <td>
                             <input type="email" size="50" name="email" required maxlength="256"><!--メールアドレスを入力するテキストボックス-->
                         </td>
-                        
                       </tr>
                       <tr>
                         <th class="midashi">
                             管理者
                         </th>
                         <td>
-                        	
                             <input type="checkbox" class="big2" name="flg" value=1>
                         </td>                        
                       </tr>                       

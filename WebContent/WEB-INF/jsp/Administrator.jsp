@@ -65,15 +65,15 @@ if (optList.isPresent()) {
             </table>
         </div> 
         
-            	<div style="text-align: center; display:inline-flex"> 
+            	<div class="btn2">
             	
-            	<form action="AccountAdd" method="get" > 
-                	<button type="submit" value="account_name"class="btn btn--blue">新規作成<!-- アカウント追加画面へ遷移させる--></button>
-                </form>
+            		<form action="AccountAdd" method="get" > 
+                		<button type="submit" value="account_name"class="btn btn--blue">新規作成<!-- アカウント追加画面へ遷移させる--></button>
+                	</form>
                 
-                <form action="AccountFix" method="get" >                 	
-                	<button type="submit" formaction="AccountFix" class="btn btn--blue">修正<!-- アカウント修正画面へ遷移させる--></button>
-                </form>
+                	<form action="AccountFix" method="get" >                 	
+                		<button type="submit" formaction="AccountFix" class="btn btn--red">修正<!-- アカウント修正画面へ遷移させる--></button>
+                	</form>
                 
                 </div>
                     

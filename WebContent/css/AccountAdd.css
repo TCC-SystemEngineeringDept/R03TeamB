@@ -32,8 +32,10 @@ body{
 
 .btn--blue,
 a.btn--blue {
-  color: #fff;
-  background: #3bb3e2;
+    background: white;
+    border-radius: 8px;
+    border-color: blue;
+    box-shadow: none;
 }
 
 .btn--white,
