@@ -26,7 +26,7 @@ if (optList.isPresent()) {
 <div class="container mt-5 pt-5">
     <div class="title">
 		
-        <a href="" class="btn btn--white">依頼管理画面</a><!-- 依頼管理画面へ遷移させる -->
+        <a href="" class="btn btn--white btn-outline-dark">依頼管理画面</a><!-- 依頼管理画面へ遷移させる -->
 		
 			
         <h2 class="text-center border-bottom border-dark">管理者画面</h2>
@@ -68,11 +68,11 @@ if (optList.isPresent()) {
             	<div class="btn2">
             	
             		<form action="AccountAdd" method="get" > 
-                		<button type="submit" value="account_name"class="btn btn--blue">新規作成<!-- アカウント追加画面へ遷移させる--></button>
+                		<button type="submit" value="account_name"class="btn btn--blue btn-outline-primary">新規作成<!-- アカウント追加画面へ遷移させる--></button>
                 	</form>
                 
                 	<form action="AccountFix" method="get" >                 	
-                		<button type="submit" formaction="AccountFix" class="btn btn--red">修正<!-- アカウント修正画面へ遷移させる--></button>
+                		<button type="submit" formaction="AccountFix" class="btn btn-outline-danger btn--red ">修正<!-- アカウント修正画面へ遷移させる--></button>
                 	</form>
                 
                 </div>

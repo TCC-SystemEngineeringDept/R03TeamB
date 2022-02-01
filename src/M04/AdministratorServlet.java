@@ -30,6 +30,7 @@ public class AdministratorServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//アカウントを一覧表示する機能
 		
 		try {		
 			

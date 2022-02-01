@@ -3,14 +3,14 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="bean.AccountBean" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="../css/AccountFix.css" rel="stylesheet" type="text/css">
+    <link href="css/AccountFix.css" rel="stylesheet" type="text/css">
     
 <title>管理者画面</title>
 </head>
@@ -29,14 +29,15 @@ if (optList.isPresent()) {
         <a href="Administrator" class="btn btn--white">管理者画面</a><!-- 依頼管理画面へ遷移させる -->
 		
 			
-        <h2 class="text-center border-bottom border-dark">アカウント修正画面</h2>
+        <h2 class="text-center border-bottom border-outline-dark">アカウント修正画面</h2>
             
         </div>
-        <form action="" method="get">
         <div>   
             <table class="table table-bordered ">
-                <tbody>
                     <tr>
+                    	<th>
+                            アカウントID
+                        </th>
                         <th>
                             アカウント名
                         </th>
@@ -46,13 +47,17 @@ if (optList.isPresent()) {
                         <th class="center">
                             管理者
                         </th>
-                        <th class="center">
-                            削除
-                        </th>
+                        
                       </tr>                    
                     <%	for (String[] s : list) { %> 
 						
-					<tr>
+					<tr>					
+						<td>
+						<form action="AccountFix2" method="post">
+							
+                            <button type="submit" class="btn btn--link" name="id" value=<%=s[3] %>><%=s[3] %><!-- ここにアカウントIDを送信する --></button>
+                        </form>
+                        </td>                    
 	          			<td>
                             <span><%=s[0] %><!-- ここにアカウント名を取得して表示させる --></span>
                         </td>
@@ -61,30 +66,24 @@ if (optList.isPresent()) {
                         </td>
                         
                 
-                        <% if (s[2] == "1" ){ %>
-                          	<td class="big">
-                            	<input type="checkbox">
-                        	</td>
+                        <% if (s[2].equals( "1") ){ %>
+                          	<td class="cbox">                            	
+                            	yes
+                        	</td> 
+                        	
+                        		
                         <% } else { %>
-                        	<td class="big">             
-                            	<input type="checkbox">                        	
+                        	<td class="cbox">             
+                            	no                     	
                         	</td>
                         <% } %>
-                        
-                        <td class="center">
-                        	<button type="submit" value="this.account_name"class="btn btn--white">削除<!-- 修正画面へ遷移させる --></a>
-                        </td> 
+                                              
                      </tr>                 
-                <%
-				}
-				%> 
-            </table>
-        </div> 
-             <h3 style="text-align: center;">  
-                <a href="" class="btn btn--blue">変更内容を保存<!-- 管理者画面へ遷移させる--></a>
-        </h3>                    
-            </tbody>            
-		</form>
-	</div>
+	                <%
+					}
+					%> 
+            	</table>
+        	</div> 
+		</div>
 	</body>
 </html>
