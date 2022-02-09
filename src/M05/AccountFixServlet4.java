@@ -1,10 +1,12 @@
-package M06;
+package M05;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
@@ -14,27 +16,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-@WebServlet("/AccountAdd2")
-public class AccountAddServlet2 extends HttpServlet {
+@WebServlet("/AccountFix4")
+public class AccountFixServlet4 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
-    public AccountAddServlet2() {
+
+    public AccountFixServlet4() {
         super();
-       
+        
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    	doPost(request, response);
-		}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//アカウントを追加するプログラム
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("utf-8");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
-		String name = request.getParameter("account_name");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String flg = request.getParameter("flg");
 
@@ -44,34 +45,33 @@ public class AccountAddServlet2 extends HttpServlet {
 			Connection con=ds.getConnection();
 			PreparedStatement st =
 					con.prepareStatement(
-							"insert into account(account_name,email,admin_flag) Values(?,?,?)"
+							"update account set account_name = ?,email = ?,admin_flag = ? where account_id = ?"
 						);
 			
 			if(flg == null) {
 				flg = "0";
 				
 			}
-			 
-			System.out.println(name);
-			System.out.println(email);
-			System.out.println(flg);
-		
+			
 			st.setString(1, name);
 			st.setString(2, email);
 			st.setString(3, flg);
+			st.setString(4, id);			
 			st.executeUpdate();
-
+			con.close();
+			
 			request.getRequestDispatcher("Administrator").forward(request,response);
-
-
-
-		} catch (SQLException e ) {
+			response.getWriter().append("Served at: ").append(request.getContextPath());
 			
-			e.printStackTrace();
-			
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
+			} catch (SQLException e ) {
+					
+					e.printStackTrace();
+					
+			} catch (Exception e) {
+					
+					e.printStackTrace();
+			}
+		
 	}
+
 }

@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="css/AccountAdd.css" rel="stylesheet" type="text/css">
-<title>管理者画面</title>
+<title>アカウント追加画面</title>
 </head>
 <%
 Optional<List<String[]>> optList = Optional.ofNullable((List<String[]>) request.getAttribute("list"));
@@ -25,7 +25,7 @@ if (optList.isPresent()) {
 <div class="container mt-5 pt-5">
     <div class="title">
 		
-        <a href="Administrator" class="btn btn--white">管理者画面</a><!-- 管理者画面へ遷移させる -->		
+        <a href="Administrator" class="btn btn--white btn-outline-dark">管理者画面</a><!-- 管理者画面へ遷移させる -->		
 			
         <h2 class="text-center border-bottom border-dark">アカウント追加画面</h2>
             
@@ -63,7 +63,7 @@ if (optList.isPresent()) {
             </table>
                                  
                     <h3 style="text-align: center;">                      
-                        <button type="submit" class="btn btn--blue">アカウント追加<!-- アカウント追加画面へ遷移させる--></button>                    
+                        <button type="submit" class="btn btn--blue btn-outline-primary">アカウント追加<!-- アカウント追加画面へ遷移させる--></button>                    
                     </h3>                            
             
 			</div>
