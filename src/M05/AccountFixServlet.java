@@ -36,7 +36,7 @@ try {
 			Connection con=ds.getConnection();
 			PreparedStatement st =
 					con.prepareStatement(
-							"select account_id,account_name,email,admin_flag  from account"
+							"select account_id,account_name,email,admin_flag from account"
 						);
 			ResultSet result = st.executeQuery();			
 			List<String[]> list = new ArrayList<>();
@@ -55,9 +55,7 @@ try {
 		
 		request.setAttribute("list", list);		
 		request.getRequestDispatcher("/WEB-INF/jsp/AccountFix.jsp").forward(request,response);
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		doGet(request, response);
-
+		
 
 		} catch (SQLException e ) {
 	

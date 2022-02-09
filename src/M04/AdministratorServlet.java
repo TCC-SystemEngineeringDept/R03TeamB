@@ -52,6 +52,8 @@ public class AdministratorServlet extends HttpServlet {
 				s[2] = result.getString("email");
 				list.add(s);
 			}
+			
+			con.close();
 				
 				request.setAttribute("list", list);
 				request.getRequestDispatcher("/WEB-INF/jsp/Administrator.jsp").forward(request,response);

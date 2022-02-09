@@ -32,7 +32,7 @@ function confim(){
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="css/AccountFix.css" rel="stylesheet" type="text/css">
     <script type="text/javascript"></script>
-<title>管理者画面</title>
+<title>アカウント修正画面</title>
 </head>
 <%
 Optional<List<String[]>> optList = Optional.ofNullable((List<String[]>) request.getAttribute("list"));
@@ -46,7 +46,7 @@ if (optList.isPresent()) {
 <div class="container mt-5 pt-5">
     <div class="title">
 		
-        <a href="" class="btn btn--white">アカウント修正画面</a><!-- 管理者画面へ遷移させる -->
+        <a href="Administrator" class="btn btn--white btn-outline-dark">アカウント修正画面</a><!-- 管理者画面へ遷移させる -->
 		
 			
         <h2 class="text-center border-bottom border-dark">アカウント修正画面</h2>
